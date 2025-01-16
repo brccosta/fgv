@@ -1,0 +1,31 @@
+/* Define os estilos globais para o elemento body */
+body {
+    font-family: Arial, sans-serif;    /* Define a fonte principal como Arial, com fallback para fontes sans-serif */
+    text-align: center;                /* Centraliza todo o conteúdo do texto */
+    margin: 0;                         /* Remove as margens externas */
+    padding: 20px;                     /* Adiciona um espaçamento interno de 20px */
+    background-color: #f0f8ff;         /* Define um fundo azul claro (Alice Blue) */
+}
+
+/* Estilos para todos os títulos h1 */
+h1 {
+    color: #333;                       /* Define a cor do texto como cinza escuro */
+    margin-bottom: 20px;               /* Adiciona margem inferior de 20px */
+}
+
+/* Estilos para todos os botões */
+button {
+    background-color: #007BFF;         /* Define cor de fundo azul */
+    color: white;                      /* Define cor do texto como branco */
+    border: none;                      /* Remove a borda do botão */
+    padding: 10px 20px;               /* Adiciona espaçamento interno (10px vertical, 20px horizontal) */
+    font-size: 16px;                  /* Define o tamanho da fonte */
+    border-radius: 5px;               /* Adiciona cantos arredondados */
+    cursor: pointer;                  /* Muda o cursor para mãozinha ao passar por cima */
+    transition: background-color 0.3s ease; /* Adiciona transição suave na mudança de cor de fundo */
+}
+
+/* Estilos para o botão quando o mouse está sobre ele */
+button:hover {
+    background-color: #0056b3;        /* Muda a cor de fundo para um azul mais escuro */
+}

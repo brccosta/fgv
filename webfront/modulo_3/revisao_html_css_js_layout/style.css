@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;  /* Define a fonte padrão */
+    margin: 0;                       /* Remove margens externas */
+    padding: 20px;                   /* Adiciona espaço interno */
+}
+
+h1 {
+    text-align: center;              /* Centraliza o texto do título */
+    color: #333;                   /* Cor do título em cinza escuro */
+}
+
+.container {
+    display: flex;                   /* Ativa o Flexbox neste elemento */
+    justify-content: center;         /* Centraliza os itens horizontalmente */
+    gap: 10px;                       /* Espaço entre os itens */
+    padding: 20px;                   /* Espaço interno do container */
+    background-color: #f0f0f0;     /* Cor de fundo cinza claro */
+}
+
+.item {
+    background-color: #007BFF;     /* Cor de fundo azul */
+    color: white;                  /* Cor do texto branco */
+    padding: 20px;                   /* Espaço interno dos itens */
+    border-radius: 5px;              /* Bordas arredondadas */
+}
+
