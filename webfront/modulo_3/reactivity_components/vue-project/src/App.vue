@@ -3,6 +3,8 @@
 // Importa dois componentes que serão utilizados na página
 import HelloWorld from './components/HelloWorld.vue'
 import Directives from './components/Directives.vue'
+import ButtonCounter from './components/ButtonCounter.vue'
+import Produto from './components/Produto.vue'
 </script>
 
 <!-- Seção de Template -->
@@ -18,10 +20,11 @@ import Directives from './components/Directives.vue'
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-
-  <!-- Conteúdo principal que contém o componente TheWelcome -->
+  <br>
   <main>
     <Directives />
+    <ButtonCounter />
+    <Produto :produto="{ nome: 'Produto Teste', preco: 99.99 }" />
   </main>
 </template>
 
