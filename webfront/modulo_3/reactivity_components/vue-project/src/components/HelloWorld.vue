@@ -1,6 +1,4 @@
 <script setup>
-// Define as propriedades do componente
-// 'msg' é uma propriedade obrigatória do tipo String
 defineProps({
   msg: {
     type: String,
@@ -8,13 +6,11 @@ defineProps({
   },
 })
 
-// Adicionando dados para demonstração
 const user = {
-  name: 'João',
+  name: 'Bruno',
   isAdmin: true
 }
 const items = ['Maçã', 'Banana', 'Laranja']
-const activeColor = 'green'
 const fontSize = 30
 </script>
 
@@ -22,11 +18,11 @@ const fontSize = 30
   <!-- Container principal com classe 'greetings' -->
   <div class="greetings">
     <!-- Text Interpolation -->
-    <h1 :class="activeColor">{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
     <p>Bem-vindo, {{ user.name.toUpperCase() }}!</p>
 
     <!-- Attribute Bindings -->
-    <div :style="{ fontSize: fontSize + 'px' }">
+    <div v-bind:style="{ fontSize: fontSize + 'px' }">
       <p :class="{ admin: user.isAdmin }">
         Status: {{ user.isAdmin ? 'Administrador' : 'Usuário' }}
       </p>

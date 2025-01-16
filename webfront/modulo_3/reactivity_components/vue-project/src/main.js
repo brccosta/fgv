@@ -6,6 +6,9 @@ import { createApp } from 'vue'
 // Importa o componente principal App do arquivo App.vue
 import App from './App.vue'
 
-// Cria a aplicação Vue usando o componente App e monta ela no elemento HTML com id 'app'
-createApp(App).mount('#app')
+// Cria a aplicação Vue e armazena em uma constante
+// app é uma instância Vue
+const app = createApp(App)
 
+// Monta a aplicação no elemento com id 'app'
+app.mount('#app')
