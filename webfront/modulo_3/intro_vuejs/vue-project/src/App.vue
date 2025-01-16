@@ -1,17 +1,25 @@
+<!-- Seção de Script -->
 <script setup>
+// Importa dois componentes que serão utilizados na página
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
+<!-- Seção de Template -->
 <template>
+  <!-- Cabeçalho da página -->
   <header>
+    <!-- Logo do Vue com dimensões definidas -->
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
+    <!-- Wrapper que contém o componente HelloWorld -->
     <div class="wrapper">
+      <!-- Componente HelloWorld com uma prop 'msg' -->
       <HelloWorld msg="You did it!" />
     </div>
   </header>
 
+  <!-- Conteúdo principal que contém o componente TheWelcome -->
   <main>
     <TheWelcome />
   </main>
