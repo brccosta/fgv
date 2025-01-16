@@ -34,3 +34,5 @@ function salvarAvaliacao(valor) {
         <p>Sua avaliação: {{ "⭐".repeat(avaliacao) }}</p>
     </div>
 </template>
+
+
