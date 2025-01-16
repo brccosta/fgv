@@ -2,7 +2,6 @@
 <script setup>
 // Importa dois componentes que serão utilizados na página
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <!-- Seção de Template -->
@@ -21,7 +20,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <!-- Conteúdo principal que contém o componente TheWelcome -->
   <main>
-    <TheWelcome />
+
   </main>
 </template>
 

@@ -7,21 +7,36 @@ defineProps({
     required: true,
   },
 })
+
+// Adicionando dados para demonstração
+const user = {
+  name: 'João',
+  isAdmin: true
+}
+const items = ['Maçã', 'Banana', 'Laranja']
+const activeColor = 'green'
+const fontSize = 30
 </script>
 
 <template>
   <!-- Container principal com classe 'greetings' -->
   <div class="greetings">
-    <!-- Exibe a mensagem recebida via prop 'msg' com estilo verde -->
-    <h1 class="green">{{ msg }}</h1>
-    <!-- Texto informativo com links para Vite e Vue 3 -->
-    <h3>
-      You've successfully created a project with
-      <!-- Link para documentação do Vite -->
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <!-- Link para documentação do Vue.js -->
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+    <!-- Text Interpolation -->
+    <h1 :class="activeColor">{{ msg }}</h1>
+    <p>Bem-vindo, {{ user.name.toUpperCase() }}!</p>
+
+    <!-- Attribute Bindings -->
+    <div :style="{ fontSize: fontSize + 'px' }">
+      <p :class="{ admin: user.isAdmin }">
+        Status: {{ user.isAdmin ? 'Administrador' : 'Usuário' }}
+      </p>
+    </div>
+
+    <!-- JavaScript Expressions -->
+    <div class="expressions">
+      <p>Quantidade de itens: {{ items.length }}</p>
+      <p>Data atual: {{ new Date().toLocaleDateString() }}</p>
+    </div>
   </div>
 </template>
 
@@ -52,5 +67,18 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
+}
+
+/* Adicionando novos estilos */
+.admin {
+  color: red;
+  font-weight: bold;
+}
+
+.expressions {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 </style>
