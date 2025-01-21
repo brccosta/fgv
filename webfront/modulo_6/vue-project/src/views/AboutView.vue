@@ -1,8 +1,26 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div v-for="usuario in usuarios" :key="usuario.id">
+      <p>Nome: {{ usuario.nome }}</p>
+      <p>Email: {{ usuario.email }}</p>
+      <hr>
+    </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+const usuarios = ref([])
+
+onMounted(() => {
+  axios.get('http://localhost:3000/usuarios')
+    .then(response => {
+      usuarios.value = response.data
+    })
+})
+</script>
 
 <style>
 @media (min-width: 1024px) {
