@@ -1,31 +1,35 @@
 <template>
   <div class="about">
-    <div v-for="usuario in usuarios" :key="usuario.id">
-      <p>Nome: {{ usuario.nome }}</p>
-      <p>Email: {{ usuario.email }}</p>
-      <hr>
+    <div v-if="carregando">Carregando...</div>
+    <div v-else-if="erro">Erro ao carregar usuários: {{ erro }}</div>
+    <div v-else>
+      <div v-for="usuario in usuarios" :key="usuario.id">
+        <p>Nome: {{ usuario.nome }}</p>
+        <p>Email: {{ usuario.email }}</p>
+        <hr>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-// Importando o Axios
 import axios from 'axios'
 
-// Criando uma referência reativa para armazenar os usuários
 const usuarios = ref([])
+const erro = ref(null)
+const carregando = ref(true)
 
-// Executando a chamada à API quando o componente é montado
 onMounted(() => {
-  // Fazendo uma requisição GET para buscar os usuários
-  // O Axios retorna uma Promise (objeto que representa a 
-  // eventual conclusão ou falha de uma operação assíncrona)
   axios.get('http://localhost:3000/usuarios')
     .then(response => {
-      // Atribuindo os dados recebidos à referência reativa
-      // response.data contém o corpo da resposta da API
       usuarios.value = response.data
+    })
+    .catch(error => {
+      erro.value = error.message
+    })
+    .finally(() => {
+      carregando.value = false
     })
 })
 </script>
