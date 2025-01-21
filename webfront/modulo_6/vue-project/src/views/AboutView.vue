@@ -14,23 +14,20 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import UsuarioService from '@/services/UsuarioService'
 
 const usuarios = ref([])
 const erro = ref(null)
 const carregando = ref(true)
 
-onMounted(() => {
-  axios.get('http://localhost:3000/usuarios')
-    .then(response => {
-      usuarios.value = response.data
-    })
-    .catch(error => {
-      erro.value = error.message
-    })
-    .finally(() => {
-      carregando.value = false
-    })
+onMounted(async () => {
+  try {
+    usuarios.value = await UsuarioService.getUsuarios()
+  } catch (error) {
+    erro.value = error.message
+  } finally {
+    carregando.value = false
+  }
 })
 </script>
 
