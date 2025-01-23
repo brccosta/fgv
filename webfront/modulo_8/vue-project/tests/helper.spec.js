@@ -1,4 +1,3 @@
-// helpers.spec.js
 import { increment } from './helpers'
 
 describe('increment', () => {
