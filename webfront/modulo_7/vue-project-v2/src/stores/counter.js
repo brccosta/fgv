@@ -20,5 +20,10 @@ export const useCounterStore = defineStore('counter', {
       return (amount) => state.count + amount
     },
   },
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
 })
 

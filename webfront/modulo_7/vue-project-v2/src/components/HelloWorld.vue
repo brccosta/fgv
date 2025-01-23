@@ -1,13 +1,18 @@
 <script setup>
 import { useCounterStore } from '../stores/counter'
+import { ref } from 'vue'
 
 const counter = useCounterStore()
+const amountToAdd = ref(5)
 </script>
 
 <template>
   <div class="counter-container">
     <h2>HelloWorld.vue</h2>
     <h1>Contador: {{ counter.count }}</h1>
+    <p>Valor dobrado: {{ counter.doubleCount }}</p>
+    <p>Valor incrementado: {{ counter.incrementedCount }}</p>
+    <p>Valor + {{ amountToAdd }}: {{ counter.addAmount(amountToAdd) }}</p>
     <button @click="counter.increment">Incrementar</button>
   </div>
 </template>
