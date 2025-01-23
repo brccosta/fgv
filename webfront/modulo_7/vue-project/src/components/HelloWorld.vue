@@ -1,44 +1,40 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
+import { useCounterStore } from '../stores/counter'
+
+const counter = useCounterStore()
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="counter-container">
+    <h2>HelloWorld.vue</h2>
+    <h1>Contador: {{ counter.count }}</h1>
+    <button @click="counter.increment">Incrementar</button>
   </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
+.counter-container {
   text-align: center;
+  padding: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+h2 {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
 }
 </style>
