@@ -2,20 +2,22 @@
 // que é usada para criar stores no Vue.js
 import { defineStore } from 'pinia'
 
-// Define e exporta uma store chamada 'counter'
-// O primeiro argumento 'counter' é o id único da store
 export const useCounterStore = defineStore('counter', {
-  // Define o estado inicial da store
-  // Retorna um objeto com a propriedade count iniciada em 0
-  state: () => {
-    return { count: 0 }
-  },
-
-  // Define as ações que podem modificar o estado
-  actions: {
-    // Método que incrementa o contador em 1
-    increment() {
-      this.count++
+  state: () => ({
+    count: 0,
+  }),
+  getters: {
+    // Getter que multiplica por 2
+    doubleCount: (state) => state.count * 2,
+    
+    // Getter que soma 1
+    incrementedCount: (state) => state.count + 1,
+    
+    // Getter que recebe um parâmetro para somar
+    // Note que quando precisamos usar parâmetros em getters,
+    // precisamos retornar uma função
+    addAmount: (state) => {
+      return (amount) => state.count + amount
     },
   },
 })
